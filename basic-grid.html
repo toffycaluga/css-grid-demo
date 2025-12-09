@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grid básico – CSS Grid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Grid – Grid básico</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="gaps-grid.html">Gaps</a>
+      <a href="gallery-grid.html">Galería</a>
+      <a href="fr-units-grid.html">Fracciones (fr)</a>
+      <a href="layout-areas-grid.html">Layout completo</a>
+      <a href="flex-vs-grid.html">Flexbox vs Grid</a>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+
+    <h2>Grid básico: 3 columnas automáticas</h2>
+    <p class="section-description">
+      Empezamos con un contenedor que tiene 3 columnas definidas con
+      <code>grid-template-columns: auto auto auto;</code>.
+    </p>
+
+    <div class="example-box">
+      <div class="example-title">Ejemplo</div>
+      <div class="example-note">
+        <strong>Ejercicio:</strong> cambia a solo 2 columnas en el CSS
+        (<code>auto auto</code>). ¿Qué pasa con el ítem sobrante?
+      </div>
+
+      <div class="grid-basic">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+
+      <pre class="code-block"><code>.grid-basic {
+  display: grid;
+  grid-template-columns: auto auto auto; /* Prueba con auto auto */
+  gap: 0.75rem;
+}</code></pre>
+    </div>
+  </main>
+</body>
+</html>

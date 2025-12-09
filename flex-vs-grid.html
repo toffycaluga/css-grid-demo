@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flexbox vs Grid – CSS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Flexbox vs Grid</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="basic-grid.html">Grid básico</a>
+      <a href="gaps-grid.html">Gaps</a>
+      <a href="gallery-grid.html">Galería</a>
+      <a href="fr-units-grid.html">Fracciones (fr)</a>
+      <a href="layout-areas-grid.html">Layout completo</a>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+
+    <h2>¿Cuándo usar Flexbox y cuándo Grid?</h2>
+    <p class="section-description">
+      Usa <strong>Flexbox</strong> para layouts en una sola dirección
+      (fila <em>o</em> columna) y <strong>Grid</strong> cuando necesites
+      trabajar con filas <em>y</em> columnas al mismo tiempo.
+    </p>
+
+    <div class="example-box">
+      <div class="example-title">Ejemplo Flexbox: barra de navegación</div>
+      <div class="example-note">
+        Layout unidimensional: solo una fila con elementos alineados.
+      </div>
+
+      <div class="flex-navbar">
+        <div class="logo">Mi Sitio</div>
+        <div class="links">
+          <a href="#">Inicio</a>
+          <a href="#">Servicios</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+
+      <pre class="code-block"><code>.flex-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</code></pre>
+    </div>
+
+    <div class="example-box">
+      <div class="example-title">Ejemplo Grid: Dashboard</div>
+      <div class="example-note">
+        Layout bidimensional: varias tarjetas arriba y un gráfico abajo,
+        controlando filas y columnas.
+      </div>
+
+      <div class="grid-dashboard">
+        <div class="grid-card grid-card-1">Card 1</div>
+        <div class="grid-card grid-card-2">Card 2</div>
+        <div class="grid-card grid-card-3">Card 3</div>
+        <div class="grid-card grid-chart">Gráfico / tabla grande</div>
+      </div>
+
+      <pre class="code-block"><code>.grid-dashboard {
+  display: grid;
+  grid-template-areas:
+    "card1 card2 card3"
+    "chart chart chart";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}</code></pre>
+    </div>
+  </main>
+</body>
+</html>

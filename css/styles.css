@@ -1,0 +1,264 @@
+/* Estilos base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+nav a {
+  color: #9ca3af;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #fbbf24;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.section-description {
+  margin-bottom: 1.5rem;
+  color: #9ca3af;
+}
+
+.example-box {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.example-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.example-note {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+/* Estilos generales para ítems de grid */
+
+.grid-item {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+
+/* -------- 1. GRID BÁSICO -------- */
+
+.grid-basic {
+  display: grid;
+  grid-template-columns: auto auto auto; /* 3 columnas automáticas */
+  gap: 0.75rem;
+}
+
+/* -------- 2. GAPS -------- */
+
+.grid-gaps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* puedes cambiar el valor en clase */
+}
+
+/* -------- 3. GALERÍA DE IMÁGENES -------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* -------- 4. FRACCIONES Y PORCENTAJES -------- */
+
+.fr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* puedes jugar con 2fr, 3fr, etc. */
+  gap: 0.75rem;
+}
+
+.fr-item-1 { background: #f97316; }
+.fr-item-2 { background: #22c55e; }
+.fr-item-3 { background: #06b6d4; }
+
+.fr-mixed-grid {
+  display: grid;
+  grid-template-columns: 30% 1fr 2fr; /* combinación % + fr */
+  gap: 0.75rem;
+}
+
+/* -------- 5. LAYOUT CON ÁREAS -------- */
+
+.layout-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.75rem;
+  min-height: 60vh;
+}
+
+.layout-header {
+  grid-area: header;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.layout-sidebar {
+  grid-area: sidebar;
+  background: #111827;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.layout-main {
+  grid-area: main;
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #1f2937;
+}
+
+.layout-footer {
+  grid-area: footer;
+  background: #111827;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+/* -------- 6. FLEXBOX VS GRID -------- */
+
+.flex-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.flex-item {
+  background: #1f2937;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  flex: 1;
+}
+
+.flex-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111827;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.flex-navbar .logo {
+  font-weight: 600;
+}
+
+.flex-navbar .links {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.flex-navbar .links a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+/* Grid para comparativa */
+
+.grid-dashboard {
+  display: grid;
+  grid-template-areas:
+    "card1 card2 card3"
+    "chart chart chart";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.grid-card {
+  background: #111827;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.grid-card-1 { grid-area: card1; }
+.grid-card-2 { grid-area: card2; }
+.grid-card-3 { grid-area: card3; }
+.grid-chart  { grid-area: chart; }
+
+/* Link de volver */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #facc15;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Código de ejemplo */
+
+.code-block {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  overflow-x: auto;
+  border: 1px solid #1f2937;
+}

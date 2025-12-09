@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Layout con grid-template-areas – CSS Grid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Grid – Layout con Áreas</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="basic-grid.html">Grid básico</a>
+      <a href="gaps-grid.html">Gaps</a>
+      <a href="gallery-grid.html">Galería</a>
+      <a href="fr-units-grid.html">Fracciones (fr)</a>
+      <a href="flex-vs-grid.html">Flexbox vs Grid</a>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+
+    <h2>Layout completo con grid-template-areas</h2>
+    <p class="section-description">
+      Nombramos cada sección del layout y luego “dibujamos” la estructura
+      con <code>grid-template-areas</code>.
+    </p>
+
+    <div class="example-box">
+      <div class="example-title">Layout: Header, Sidebar, Main, Footer</div>
+      <div class="example-note">
+        <strong>Ejercicio:</strong> agrega una nueva área (por ejemplo “aside2”)
+        y cambia el diseño solo modificando <code>grid-template-areas</code>.
+      </div>
+
+      <div class="layout-grid">
+        <header class="layout-header">
+          <strong>Header</strong><br>
+          Menú principal del sitio
+        </header>
+
+        <aside class="layout-sidebar">
+          <strong>Sidebar</strong><br>
+          Enlaces, filtros, menú secundario
+        </aside>
+
+        <section class="layout-main">
+          <strong>Main</strong><br>
+          Contenido principal de la página. Aquí iría el texto, las tarjetas,
+          etc. Piensa en la sección de “contenido” de un sitio real.
+        </section>
+
+        <footer class="layout-footer">
+          <strong>Footer</strong><br>
+          Información de contacto, links legales, redes sociales, etc.
+        </footer>
+      </div>
+
+      <pre class="code-block"><code>.layout-grid {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.75rem;
+  min-height: 60vh;
+}
+
+.layout-header  { grid-area: header; }
+.layout-sidebar { grid-area: sidebar; }
+.layout-main    { grid-area: main; }
+.layout-footer  { grid-area: footer; }</code></pre>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galería de imágenes – CSS Grid</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Grid – Galería de imágenes</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="basic-grid.html">Grid básico</a>
+      <a href="gaps-grid.html">Gaps</a>
+      <a href="fr-units-grid.html">Fracciones (fr)</a>
+      <a href="layout-areas-grid.html">Layout completo</a>
+      <a href="flex-vs-grid.html">Flexbox vs Grid</a>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="index.html">← Volver al inicio</a>
+
+    <h2>Galería de imágenes con Grid</h2>
+    <p class="section-description">
+      Usamos Grid para crear una galería simple.
+      Las imágenes se adaptan al ancho de la columna.
+    </p>
+
+    <div class="example-box">
+      <div class="example-title">Galería</div>
+      <div class="example-note">
+        <strong>Ejercicio:</strong> cambia el número de columnas
+        y el tamaño de las imágenes. Juega con <code>object-fit</code>.
+      </div>
+
+      <div class="gallery-grid">
+        <img src="https://picsum.photos/seed/1/400/300" alt="Imagen 1">
+        <img src="https://picsum.photos/seed/2/400/300" alt="Imagen 2">
+        <img src="https://picsum.photos/seed/3/400/300" alt="Imagen 3">
+        <img src="https://picsum.photos/seed/4/400/300" alt="Imagen 4">
+        <img src="https://picsum.photos/seed/5/400/300" alt="Imagen 5">
+        <img src="https://picsum.photos/seed/6/400/300" alt="Imagen 6">
+      </div>
+
+      <pre class="code-block"><code>.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* cambia a 2, 4, etc. */
+  gap: 8px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* cover, contain, fill */
+}</code></pre>
+    </div>
+  </main>
+</body>
+</html>
